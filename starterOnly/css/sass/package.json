@@ -1,0 +1,11 @@
+{
+  "name": "gameon-style",
+  "version": "1.0.0",
+  "description": "Style du site gameon",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:../style.css"
+  },
+  "author": "Fabien Picard",
+  "license": "ISC"
+}
