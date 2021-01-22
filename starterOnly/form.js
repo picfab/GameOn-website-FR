@@ -135,9 +135,6 @@ class formIncription{
     console.log(formInscription)
     modalContent.innerHTML=''
     modalContent.append(formInscription)
-    // if(successElt){
-    //   successElt.remove()
-    // }
   }
   showSuccess(){
     modalContent.innerHTML = `<span>${this.message.success}</span>`
@@ -156,13 +153,6 @@ class formIncription{
       this.removeSucces()
       closeModal()
     }
-    // this.removeSucces()
-
-    // const btnSubmit = document.getElementById('submitIncription')
-    // const content = document.createElement('p')
-    // content.classList.add('success')
-    // content.innerHTML=this.message.success
-    // btnSubmit.before(content)
   }
 
   //validate all inputs fields
