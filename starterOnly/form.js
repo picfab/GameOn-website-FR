@@ -1,7 +1,8 @@
+const modalContent = document.querySelector(".modal-body");
 const formInscription = document.getElementById("formInscription");
 const submit = document.getElementById("submitIncription");
 const formData = document.querySelectorAll(".formData");
-
+const closeBtn = document.querySelectorAll(".close");
 //Create a object for the inscription form and validate, display error and succes answer
 // need all formData in the constructor
 // send validate or error after submission
@@ -11,7 +12,7 @@ class formIncription{
   //all error and success answer
   message={
     first:"Veuillez entrer 2 caractères ou plus pour le champ du Prénom.",
-    last:"Veuillez entrer 2 caractères ou plus pour le champ du Prénom.",
+    last:"Veuillez entrer 2 caractères ou plus pour le champ du Nom.",
     location:"Vous devez choisir une option.",
     email:"Veuillez renseigner un email valide.",
     quantity:"Veuillez renseigner un nombre.",
@@ -102,40 +103,66 @@ class formIncription{
 
   //show one error
   showError(name){
+    console.log(name);
     this.removeError(name)
     const formBox = formInscription.querySelector(`[name=${name}]`)
     const elt = formBox.closest('.formData')
     elt.classList.add('error')
-    const content = document.createElement('p')
+    const content = document.createElement('span')
     content.classList.add('error')
     content.classList.add(name)
     content.innerHTML=this.message[name]
-    elt.append(content)
+    if(name==='accept'){
+
+      const acceptFormbox =elt.querySelector(`[for=${formBox.id}]`)
+      acceptFormbox.after(content)
+    }else{
+      elt.append(content)
+    }
   }
 
   //remove one error
   removeError(name){
     const oldElt = formInscription.querySelector(`.error.${name}`)
     if(oldElt){
+      oldElt.parentNode.closest(".error").classList.remove('error')
       oldElt.remove()
-      elt.classList.remove('error')
     }
   }
 
   //show success message
   removeSucces(){
-    const successElt = formInscription.querySelector('.success')
-    if(successElt){
-      successElt.remove()
-    }
+    console.log(formInscription)
+    modalContent.innerHTML=''
+    modalContent.append(formInscription)
+    // if(successElt){
+    //   successElt.remove()
+    // }
   }
   showSuccess(){
-    this.removeSucces()
-    const btnSubmit = document.getElementById('submitIncription')
-    const content = document.createElement('p')
-    content.classList.add('success')
-    content.innerHTML=this.message.success
-    btnSubmit.before(content)
+    modalContent.innerHTML = `<span>${this.message.success}</span>`
+
+    const buttonClose = document.createElement('button')
+    buttonClose.classList.add('btn-submit')
+    buttonClose.classList.add('button')
+        buttonClose.textContent='Fermer'
+
+    modalContent.append(buttonClose)
+    buttonClose.onclick = ()=>{
+      this.removeSucces()
+      closeModal()
+    }
+    closeBtn.onclick=()=>{
+      this.removeSucces()
+      closeModal()
+    }
+    // this.removeSucces()
+
+    // const btnSubmit = document.getElementById('submitIncription')
+    // const content = document.createElement('p')
+    // content.classList.add('success')
+    // content.innerHTML=this.message.success
+    // btnSubmit.before(content)
   }
 
   //validate all inputs fields
