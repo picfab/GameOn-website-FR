@@ -4,8 +4,8 @@ import {formData} from './eltDom.js'
  */
 export const clean = () => {
     // Nettoie le formulaire
-    Object.entries(formData).forEach(
-        ([key, item]) => {
+    formData.forEach(
+        (item) => {
             const inputs = item.getElementsByTagName('input')
             Array.from(inputs).forEach(input => {
                 if (['checkbox', 'radio'].includes(input.type)) {
