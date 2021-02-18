@@ -8,6 +8,8 @@ export const messages = {
     email: "Veuillez renseigner un email valide.",
     quantity: "Veuillez renseigner un nombre.",
     accept: "Vous devez vérifier que vous acceptez les termes et conditions.",
-    birthdate: "Vous devez entrer votre date de naissance.",
+    birthdate: "Vous devez entrer une date de naissance.",
+    dateNotValide: "Votre date de naissance n'est pas valide.",
+    toYoung: "Vous êtes trop jeune.",
     success: "Merci ! Votre réservation a été reçue.",
 }

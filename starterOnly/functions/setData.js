@@ -23,14 +23,16 @@ export const setValue = (fields,name, value, type = null, error = false) => {
  * set one error
  * @param {object} fields
  * @param {number} key
- * @param {boolean} val
+ * @param {boolean} error
+ * @param {string} message
  */
-export const setError = (fields, key, val) => {
+export const setError = (fields, key, error, message=null) => {
     fields = {
         ...fields,
         [key]: {
             ...fields[key],
-            error: val
+            error,
+            message:message?message:key
         }
     }
     return fields

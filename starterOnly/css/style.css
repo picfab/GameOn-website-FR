@@ -22,7 +22,12 @@
     font-size: 1.8em; }
 
   .icon .fa-bars {
-    color: #ff0000; } }
+    color: #ff0000; }
+  .icon:hover i {
+    color: #fff; }
+
+  .topnav.responsive i {
+    color: #fff; } }
 @media screen and (min-width: 800px) and (max-width: 950px) {
   .hero-headline {
     min-width: auto;

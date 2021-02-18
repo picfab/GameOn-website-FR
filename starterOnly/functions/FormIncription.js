@@ -1,6 +1,7 @@
 import { setValue, setError } from './setData.js'
 import { showError, showSuccess } from './show.js'
 import { removeError } from './remove.js'
+import { getAge } from './getAge.js'
 
 /**
  * Créer un objet pour le formulaire d'inscription qui permet de valider,
@@ -62,7 +63,7 @@ export default class FormIncription {
             ([key, item]) => {
                 if (item.error) {
                     error = true
-                    showError(item.name, () => removeError(item.name))
+                    showError(item, () => removeError(item.name))
                 } else {
                     removeError(item.name)
                 }
@@ -100,13 +101,21 @@ export default class FormIncription {
                     this.fields = setError(this.fields,key, item.value !== true ? true : false)
                 }
                 else if (key === 'birthdate') {
-                    this.fields = setError(this.fields,key, !item.value ? true : false)
+                    const today = new Date()
+                    const birth = new Date(item.value)
+                    let message = null
+                    if (today < birth) {
+                        message = 'dateNotValide'
+                    }
+                    else if (getAge(birth) < 18){
+                        message = 'toYoung'
+                    }
+                    this.fields = setError(this.fields, key, !item.value || message ? true : false,message)
                 }
             }
         );
         if (!this.verifErrors()){
             showSuccess()
         }
-        // return !this.verifErrors()
     }
 }

@@ -5,19 +5,19 @@ import { clean } from './clean.js'
 
 /**
  * Affiche une erreur
- * @param {string} name nom de l'erreur
+ * @param {object} item nom de l'erreur
  * @param {function} removeError nom de l'erreur
  */
-export const showError = (name, removeError) => {
+export const showError = (item, removeError) => {
     removeError()
-    const formBox = formInscription.querySelector(`[name=${name}]`)
+    const formBox = formInscription.querySelector(`[name=${item.name}]`)
     const elt = formBox.closest('.formData')
     elt.classList.add('error')
     const content = document.createElement('span')
     content.classList.add('error')
-    content.classList.add(name)
-    content.innerHTML = messages[name]
-    if (name === 'accept') {
+    content.classList.add(item.name)
+    content.innerHTML = messages[item.message]
+    if (item.name === 'accept') {
         const acceptFormbox = elt.querySelector(`[for=${formBox.id}]`)
         acceptFormbox.after(content)
     } else {

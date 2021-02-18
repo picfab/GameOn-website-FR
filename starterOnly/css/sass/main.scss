@@ -26,8 +26,20 @@
         font-size: 1.8em;
     }
 
-    .icon .fa-bars{
-        color:#ff0000;
+    .icon{
+        .fa-bars{
+            color:#ff0000;
+        }
+        &:hover{
+           i{
+                color:#fff;
+            }
+        }
+    }
+    .topnav.responsive {
+        i{
+            color:#fff;
+        }
     }
 }
 
@@ -59,3 +71,4 @@
     text-align: center;
     align-items: center;
 }
+
