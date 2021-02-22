@@ -70,4 +70,12 @@ label {
   font-family: 'Roboto';
   font-weight: 400; }
 
+@media (max-width: 799px) {
+  .logo {
+    max-width: 150px;
+    height: auto; }
+
+  .header-logo {
+    margin: 12px 33px; } }
+
 /*# sourceMappingURL=style.css.map */
