@@ -72,9 +72,6 @@ export default class FormIncription {
         return error
     }
 
-    //Affiche le message de succès
-    showSuccess = () => showSuccess()
-
     /**
      * Vérifie que tous les inputs sont bien remplis
      */
@@ -98,7 +95,7 @@ export default class FormIncription {
                     this.fields = setError(this.fields,key, !item.value ? true : false)
                 }
                 else if (key === 'accept') {
-                    this.fields = setError(this.fields,key, item.value !== true ? true : false)
+                    this.fields = setError(this.fields,key, !item.value)
                 }
                 else if (key === 'birthdate') {
                     const today = new Date()

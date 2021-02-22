@@ -4,7 +4,7 @@ import { formInscription, formData} from './functions/eltDom.js'
 /**
  * Instancie l'objet formulaire "formIncription"
  */
-const form = new FormIncription(formData,['first','last','email','birthdate','location','accept','event'])
+const form = new FormIncription(formData)
 
 /**
  * Empêche la soumission par default

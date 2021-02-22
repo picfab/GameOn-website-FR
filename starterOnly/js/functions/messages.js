@@ -1,6 +1,6 @@
 /**
-     * Tous les messages d'erreur et de validation
-     */
+ * Tous les messages d'erreur et de validation
+ */
 export const messages = {
     first: "Veuillez entrer 2 caractères ou plus pour le champ du Prénom.",
     last: "Veuillez entrer 2 caractères ou plus pour le champ du Nom.",

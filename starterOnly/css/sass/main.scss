@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "DM Sans";
+    src:   url("./DM_Sans/DMSans-Bold.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "DM Sans";
+    src:   url("./DM_Sans/DMSans-Medium.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Roboto";
+    src:   url("./Roboto/Roboto-Medium.ttf") format("truetype");
+    font-weight: 400;
+}
+
 .bground {
     background: #fff;
     overflow-y: scroll;
@@ -55,7 +71,9 @@
         border: 2px solid red;
     }
     span{
-        font-size: .6em;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 10px;
         color:red;
         display: block;
     }
@@ -72,3 +90,10 @@
     align-items: center;
 }
 
+label{
+    margin-top: 10px;
+}
+.checkbox-label,.checkbox2-label{
+    font-family: 'Roboto';
+    font-weight: 400;
+}

@@ -24,7 +24,7 @@ export const setValue = (fields,name, value, type = null, error = false) => {
  * @param {object} fields
  * @param {number} key
  * @param {boolean} error
- * @param {string} message
+ * @param {string} message optionnel
  */
 export const setError = (fields, key, error, message=null) => {
     fields = {
