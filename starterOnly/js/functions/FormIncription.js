@@ -41,15 +41,15 @@ export default class FormIncription {
                         else {
                             this.fields = setValue(this.fields,name, val, type)
                         }
-                        break;
+                        break
 
                     case 'checkbox':
                         this.fields = setValue(this.fields,name, checked, type)
-                        break;
+                        break
 
                     default:
                         this.fields = setValue(this.fields,name, value, type)
-                        break;
+                        break
                 }
             })
         })
@@ -72,6 +72,14 @@ export default class FormIncription {
         )
         return error
     }
+
+    /**
+     * methode pour afficher le message de succes
+     * permet notement d'etre remplacer si l'on doit étendre
+     * la class pour afficher un autre comportement lors
+     * de l'affichage du message de success
+     */
+    showSuccess = () =>showSuccess(this)
 
     /**
      * Vérifie que tous les inputs sont bien remplis
@@ -111,9 +119,9 @@ export default class FormIncription {
                     this.fields = setError(this.fields, key, !item.value || message ? true : false,message)
                 }
             }
-        );
+        )
         if (!this.verifErrors()){
-            showSuccess(this)
+            this.showSuccess()
         }
     }
 }

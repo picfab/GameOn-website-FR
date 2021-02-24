@@ -32,7 +32,7 @@ export const showError = (form,field, removeError) => {
  */
 export const showSuccess = (objectForm) => {
     const modalContentHeight = modalContent.offsetHeight
-    modalContent.style.minHeight = modalContentHeight + 'px';
+    modalContent.style.minHeight = modalContentHeight + 'px'
     modalContent.classList.add('success')
     modalContent.innerHTML = `<div class="successBox"><span>${messages.success}</span></div>`
 
@@ -45,6 +45,11 @@ export const showSuccess = (objectForm) => {
     buttonClose.onclick = () => {
         removeSuccess(objectForm.form)
     }
-    closeBtn.addEventListener("click", removeSuccess);
+
+    const boundRemoveSuccess = ()=>{
+        removeSuccess(objectForm.form)
+        closeBtn.removeEventListener("click", boundRemoveSuccess)
+    }
+    closeBtn.addEventListener("click", boundRemoveSuccess)
     clean(objectForm.formData)
 }

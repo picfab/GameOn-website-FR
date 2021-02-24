@@ -14,6 +14,6 @@ export const clean = (formData) => {
                 } else {
                     input.value = null
                 }
-            });
+            })
         })
 }

@@ -22,7 +22,5 @@ export const removeSuccess = (form) => {
     modalContent.removeAttribute('style')
     modalContent.classList.remove('success')
     modalContent.append(form)
-    const closeBtn = document.querySelector(".close");
-    closeBtn.removeEventListener("click", removeSuccess);
     closeModal()
 }

@@ -11,6 +11,6 @@ const form = new FormIncription(formInscription)
  * Lance la validation du formulaire
  */
 formInscription.addEventListener("submit", function(evt) {
-  evt.preventDefault();
+  evt.preventDefault()
   form.validate()
-}, false);
+}, false)
