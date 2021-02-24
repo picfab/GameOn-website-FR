@@ -64,9 +64,9 @@ export default class FormIncription {
             ([key, item]) => {
                 if (item.error) {
                     error = true
-                    showError(item, () => removeError(item.name))
+                    showError(this.form, item, () => removeError(this.form,item.name))
                 } else {
-                    removeError(item.name)
+                    removeError(this.form, item.name)
                 }
             }
         )

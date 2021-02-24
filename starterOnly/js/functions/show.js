@@ -5,12 +5,13 @@ import { clean } from './clean.js'
 
 /**
  * Affiche une erreur
+ * @param {object} form le formulaire
  * @param {object} field nom de l'erreur
  * @param {function} removeError nom de l'erreur
  */
-export const showError = (field, removeError) => {
+export const showError = (form,field, removeError) => {
     removeError()
-    const formBox = formInscription.querySelector(`[name=${field.name}]`)
+    const formBox = form.querySelector(`[name=${field.name}]`)
     const elt = formBox.closest('.formData')
     elt.classList.add('error')
     const content = document.createElement('span')
@@ -27,6 +28,7 @@ export const showError = (field, removeError) => {
 
 /**
  * Affiche le message de succés
+ * @param {array} formData le tableau avec toutes les élément node des champs du formulaire
  */
 export const showSuccess = (formData) => {
     const modalContentHeight = modalContent.offsetHeight

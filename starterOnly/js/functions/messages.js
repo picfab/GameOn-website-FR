@@ -10,6 +10,6 @@ export const messages = {
     accept: "Vous devez vérifier que vous acceptez les termes et conditions.",
     birthdate: "Vous devez entrer une date de naissance.",
     dateNotValide: "Votre date de naissance n'est pas valide.",
-    toYoung: "Vous êtes trop jeune.",
+    toYoung: "Vous n'avez pas 18 ans.",
     success: "Merci ! Votre réservation a été reçue.",
 }

@@ -1,11 +1,13 @@
-import { modalContent, formInscription } from './eltDom.js'
+import { modalContent } from './eltDom.js'
 
 /**
  * supprime une erreur
+ * @param {object} form le formulaire
  * @param {string} name nom de l'erreur
  */
-export const removeError = (name) => {
-    const oldElt = formInscription.querySelector(`.error.${name}`)
+export const removeError = (form,name) => {
+    console.log(form, name);
+    const oldElt = form.querySelector(`.error.${name}`)
     if (oldElt) {
         oldElt.parentNode.closest(".error").classList.remove('error')
         oldElt.remove()
