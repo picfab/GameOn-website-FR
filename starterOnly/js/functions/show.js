@@ -28,7 +28,7 @@ export const showError = (field, removeError) => {
 /**
  * Affiche le message de succés
  */
-export const showSuccess = () => {
+export const showSuccess = (formData) => {
     const modalContentHeight = modalContent.offsetHeight
     modalContent.style.minHeight = modalContentHeight + 'px';
     modalContent.classList.add('success')
@@ -44,5 +44,5 @@ export const showSuccess = () => {
         removeSuccess()
     }
     closeBtn.addEventListener("click", removeSuccess);
-    clean()
+    clean(formData)
 }

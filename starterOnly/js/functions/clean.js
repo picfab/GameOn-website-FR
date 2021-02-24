@@ -1,8 +1,8 @@
-import {formData} from './eltDom.js'
+// import {formData} from './eltDom.js'
 /**
  * Netoie le formulaire
  */
-export const clean = () => {
+export const clean = (formData) => {
     // Nettoie le formulaire
     formData.forEach(
         (item) => {

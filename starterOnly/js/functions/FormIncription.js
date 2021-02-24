@@ -10,11 +10,12 @@ import { getAge } from './getAge.js'
 export default class FormIncription {
     /**
      *
-     * @param {object} formData Nodelist avec tous les élements du dom contenant la class CSS .formData
+     * @param {object} form Nodelist avec le formulaire
      */
-    constructor(formData) {
-        this.formData = formData
-        this.setValues(formData)
+    constructor(form) {
+        this.form = form
+        this.formData = form.querySelectorAll(".formData")
+        this.setValues(this.formData)
     }
 
     /**
@@ -28,10 +29,10 @@ export default class FormIncription {
                 const { name, type, checked, value } = input
                 switch (input.type) {
                     case 'radio':
-                        const radioList = document.querySelectorAll(`input[name=${input.name}]`)
-                        const radioCheck = Object.entries(radioList).filter(([key, value]) => value.checked)
+                        const radioList = this.form.querySelectorAll(`input[name=${input.name}]`)
+                        const radioCheck = Object.entries(radioList).find(([key, value]) => value.checked)
                         let val = false
-                        if (radioCheck.length > 0) {
+                        if (radioCheck) {
                             if (input.checked) {
                                 val = input.value
                                 this.fields = setValue(this.fields,name, val, type)
@@ -112,7 +113,7 @@ export default class FormIncription {
             }
         );
         if (!this.verifErrors()){
-            showSuccess()
+            showSuccess(this.formData)
         }
     }
 }
