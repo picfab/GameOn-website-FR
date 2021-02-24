@@ -113,7 +113,7 @@ export default class FormIncription {
             }
         );
         if (!this.verifErrors()){
-            showSuccess(this.formData)
+            showSuccess(this)
         }
     }
 }

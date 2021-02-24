@@ -1,9 +1,8 @@
-// import {formData} from './eltDom.js'
 /**
  * Netoie le formulaire
+ * @param {object} formData Nodelist avec tous les éléments comprenant la classe CSS .formData
  */
 export const clean = (formData) => {
-    // Nettoie le formulaire
     formData.forEach(
         (item) => {
             const inputs = item.getElementsByTagName('input')

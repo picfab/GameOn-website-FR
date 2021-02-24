@@ -6,7 +6,7 @@ import { clean } from './clean.js'
 /**
  * Affiche une erreur
  * @param {object} form le formulaire
- * @param {object} field nom de l'erreur
+ * @param {object} field le champ en question
  * @param {function} removeError nom de l'erreur
  */
 export const showError = (form,field, removeError) => {
@@ -28,9 +28,9 @@ export const showError = (form,field, removeError) => {
 
 /**
  * Affiche le message de succés
- * @param {array} formData le tableau avec toutes les élément node des champs du formulaire
+ * @param {objectForm} form l'objet du formulaire
  */
-export const showSuccess = (formData) => {
+export const showSuccess = (objectForm) => {
     const modalContentHeight = modalContent.offsetHeight
     modalContent.style.minHeight = modalContentHeight + 'px';
     modalContent.classList.add('success')
@@ -43,8 +43,8 @@ export const showSuccess = (formData) => {
 
     modalContent.append(buttonClose)
     buttonClose.onclick = () => {
-        removeSuccess()
+        removeSuccess(objectForm.form)
     }
     closeBtn.addEventListener("click", removeSuccess);
-    clean(formData)
+    clean(objectForm.formData)
 }
