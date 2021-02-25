@@ -4,7 +4,7 @@
   "description": "Style du site gameon",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./main.scss:../style.css"
+    "sass": "sass --watch ./main.scss:../style.css --style compressed"
   },
   "author": "Fabien Picard",
   "license": "ISC"
